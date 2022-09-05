@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,700;0,900;1,100;1,300&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+    <title>Colégio Avanti</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="/index.html"><img class="logo_image" src="/images/logo.jpg" alt=""></a>
+        </div>
+        <div class="menu_bar">
+            <ul class="menu_lista">
+                <a href="/pages/cadastro.html"><li class="menu_itens active">Cadastro</li></a>
+                <li class="menu_itens">Matrícula</li>
+                <li class="menu_itens">Relatório</li>
+            </ul>
+        </div>
+    </header>
+    <section class="cadastro">
+        <div class="menu_cadastro">
+            <ul class="menu_cadastro_lista">
+                <li class="menu_cadastro_lista_item" onclick="abrir(1)">Ficha completa</li>
+                <li class="menu_cadastro_lista_item" onclick="abrir(2)">Cadastro Aluno</li>
+                <li class="menu_cadastro_lista_item" onclick="abrir(3)">Cadastro Pai</li>
+                <li class="menu_cadastro_lista_item" onclick="abrir(4)">Cadastro Mãe</li>
+                <li class="menu_cadastro_lista_item" onclick="abrir(5)">Cadastro Resp. Financeiro</li>
+            </ul>
+        </div>
+        <div class="cadastro_space">
+            <form id="aluno" class="cadastrar">
+                <h3>Cadastro do aluno</h3>
+
+                <hr class="linha_separadora">
+
+                <label for="nome_aluno">Nome completo</label>
+                <input class="input_type1" id="nome_aluno" type="text">
+                
+                <label for="nascimento_aluno">Data de nascimento</label>
+                <input class="input_type2" id="nascimento_aluno" type="date">
+
+                <label for="cep_aluno">cep</label>
+                <input class="input_type2" id="cep_aluno" type="number">
+
+                <label for="endereco_aluno">Endereço</label>
+                <input class="input_type1 input_linha" id="nome_aluno" type="text">
+
+                <label for="numero_aluno">Número</label>
+                <input class="input_type3" id="numero_aluno" type="number">
+
+                <label for="complemento_aluno">Complemento</label>
+                <input class="input_type1" id="complemento_aluno" type="number">
+            </form>
+
+            <form id="pai" class="cadastrar">
+                <h3>Cadastro do Pai</h3>
+
+                <hr class="linha_separadora">
+
+                <label for="nome_pai">Nome completo</label>
+                <input class="input_type1" id="nome_aluno" type="text">
+                
+                <label for="nascimento_pai">Data de nascimento</label>
+                <input class="input_type2" id="nascimento_pai" type="date">
+
+                <label for="cep_pai">cep</label>
+                <input class="input_type2" id="cep_aluno" type="number">
+
+                <label for="endereco_pai">Endereço</label>
+                <input class="input_type1 input_linha" id="nome_pai" type="text">
+
+                <label for="numero_pai">Número</label>
+                <input class="input_type3" id="numero_pai" type="number">
+
+                <label for="complemento_pai">Complemento</label>
+                <input class="input_type1" id="complemento_pai" type="number">
+            </form>
+        </div>
+    </section>
+    <script src="/js/script_cadastro_lista.js"></script>
+</body>
+</html>
