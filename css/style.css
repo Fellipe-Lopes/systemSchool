@@ -71,6 +71,7 @@
     opacity: 0.8;
     border-right: 1px solid grey;
     position: sticky;
+    top: 0;
 }
 .cadastro_space{
     flex: 5;
