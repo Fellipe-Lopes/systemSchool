@@ -4,8 +4,8 @@
         document.getElementById(loc).value = valor;
    }
 
-   function pesquisarCep(){
-     var cep = document.getElementById("cep_aluno").value;
+   function pesquisarCep(loc_cep,endereco){
+     var cep = document.getElementById(loc_cep).value;
      var url = 'https://viacep.com.br/ws/'+ cep +'/json';
      var request = new XMLHttpRequest();
 
@@ -17,8 +17,7 @@
           if(response.erro === true){
                alert("cep NAO encontrado");
           }else{
-               document.getElementById("endereco_aluno").value = response.logradouro + " - " + response.bairro;
-               document.getElementById("numero_aluno").value = response.logradouro;
+               document.getElementById(endereco).value = response.logradouro + " - " + response.bairro;
           }
      }
      request.send();

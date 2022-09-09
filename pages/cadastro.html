@@ -35,12 +35,13 @@
         </div>
         <div class="cadastro_space">
             <form id="ficha" class="cadastrar">
-                <h3>Ficha de matricula</h3>
+                <h2 class="ficha_matricula">Ficha de matricula</h2>
+                <h3 class="text_01">Aluno</h3>
 
                 <hr class="linha_separadora">
 
                 <label>Nome completo do aluno</label>
-                <input class="input_type1" id="Nap" type="text" disabled>
+                <input class="input_type1" type="text" id="Nap" disabled>
                 
                 <label>Data de nascimento</label>
                 <input class="input_type2" type="date" id="Dap" disabled>
@@ -57,28 +58,57 @@
                 <label>Complemento</label>
                 <input class="input_type1" type="text" id="Coap" disabled>
 
-                <h3>Cadastro do Pai</h3>
+                <h3 class="text_01">Pai</h3>
 
                 <hr class="linha_separadora">
 
                 <label for="nome_pai">Nome completo do pai</label>
-                <input class="input_type1" id="nome_pai" type="text" disabled>
+                <input class="input_type1" type="text" id="Npp" disabled>
                 
                 <label for="nascimento_pai">Data de nascimento</label>
-                <input class="input_type2" id="nascimento_pai" type="date" disabled>
+                <input class="input_type2"  type="date" id="Dpp" disabled>
 
                 <label for="cep_pai">cep</label>
-                <input class="input_type2" id="cep_pai" type="number" disabled>
+                <input class="input_type2" type="number" id="Cpp" disabled>
 
                 <label for="endereco_pai">Endereço</label>
-                <input class="input_type1 input_linha" id="nome_pai" type="text" disabled>
+                <input class="input_type1 input_linha"  type="text" id="Epp" disabled>
 
                 <label for="numero_pai">Número</label>
-                <input class="input_type3" id="numero_pai" type="number" disabled>
+                <input class="input_type3" type="number" id="Npp" disabled>
 
                 <label for="complemento_pai">Complemento</label>
-                <input class="input_type1" id="complemento_pai" type="text" disabled>
+                <input class="input_type1" type="text" id="Cpp" disabled>
+
+                <h3 class="text_01">Mãe</h3>
+
+                <hr class="linha_separadora">
+
+                <label for="nome_mae">Nome completo da mãe</label>
+                <input class="input_type1" type="text" id="Nmp" disabled>
+                
+                <label for="nascimento_mae">Data de nascimento</label>
+                <input class="input_type2" type="date" id="Dmp" disabled> 
+
+                <label for="cep_mae">cep</label>
+                <input class="input_type2" type="number" id="Cmp" disabled>
+
+                <label for="endereco_mae">Endereço</label>
+                <input class="input_type1 input_linha" type="text" id="Emp" disabled>
+
+                <label for="numero_mae">Número</label>
+                <input class="input_type3" type="number" id="Nmp" disabled>
+
+                <label for="complemento_mae">Complemento</label>
+                <input class="input_type1" type="text" id="Cmp" disabled>
+
+                <div class="button">
+                    <span class="button_cadastrar">Cadastrar</span>
+                    <span class="button_cancelar">Cancelar</span>
+                </div>
             </form>
+            
+            <!--CADASTRO DO ALUNO-->
 
             <form id="aluno" class="cadastrar">
                 <h3>Cadastro do aluno</h3>
@@ -92,7 +122,7 @@
                 <input class="input_type2" id="nascimento_aluno" type="date" onchange='preencher("nascimento_aluno","Dap")'>
 
                 <label for="cep_aluno">cep</label>
-                <input class="input_type2" id="cep_aluno" onchange='preencher("cep_aluno","Cap"),pesquisarCep()'>
+                <input class="input_type2" id="cep_aluno" minlength="8" maxlength="8" onchange='preencher("cep_aluno","Cap"),pesquisarCep("cep_aluno","endereco_aluno")'>
 
                 <label for="endereco_aluno">Endereço</label>
                 <input class="input_type1 input_linha" id="endereco_aluno" type="text" onchange='preencher("endereco_aluno","Eap")'>
@@ -104,29 +134,33 @@
                 <input class="input_type1" id="complemento_aluno" type="text" onchange='preencher("complemento_aluno","Coap")'>
             </form>
 
+            <!--CADASTRO DO PAI-->
+
             <form id="pai" class="cadastrar">
                 <h3>Cadastro do Pai</h3>
 
                 <hr class="linha_separadora">
 
                 <label for="nome_pai">Nome completo do pai</label>
-                <input class="input_type1" id="nome_pai" type="text" onchange='preencher()'>
+                <input class="input_type1" id="nome_pai" type="text" onchange='preencher("nome_pai","Npp")'>
                 
                 <label for="nascimento_pai">Data de nascimento</label>
-                <input class="input_type2" id="nascimento_pai" type="date" onchange='preencher()'>
+                <input class="input_type2" id="nascimento_pai" type="date" onchange='preencher("nascimento_pai","Dpp")'>
 
                 <label for="cep_pai">cep</label>
-                <input class="input_type2" id="cep_pai" type="number" onchange='preencher()'>
+                <input class="input_type2" id="cep_pai" type="number" minlength="8" maxlength="8" onchange='preencher("cep_pai","Cpp"),pesquisarCep("cep_pai","endereco_pai")'>
 
                 <label for="endereco_pai">Endereço</label>
-                <input class="input_type1 input_linha" id="nome_pai" type="text" onchange='preencher()'>
+                <input class="input_type1 input_linha" id="endereco_pai" type="text" onchange='preencher("endereco_pai","Epp")'>
 
                 <label for="numero_pai">Número</label>
-                <input class="input_type3" id="numero_pai" type="number" onchange='preencher()'>
+                <input class="input_type3" id="numero_pai" type="number" onchange='preencher("numero_pai","Npp")'>
 
                 <label for="complemento_pai">Complemento</label>
-                <input class="input_type1" id="complemento_pai" type="text" onchange='preencher()'>
+                <input class="input_type1" id="complemento_pai" type="text" onchange='preencher("complemento_pai","Cpp")'>
             </form>
+
+            <!--CADASTRO DA MÃE-->
 
             <form id="mae" class="cadastrar">
                 <h3>Cadastro da Mãe</h3>
@@ -134,22 +168,22 @@
                 <hr class="linha_separadora">
 
                 <label for="nome_mae">Nome completo da mãe</label>
-                <input class="input_type1" id="nome_mae" type="text" onchange='preencher()'>
+                <input class="input_type1" id="nome_mae" type="text" onchange='preencher("nome_mae","Nmp")'>
                 
                 <label for="nascimento_mae">Data de nascimento</label>
-                <input class="input_type2" id="nascimento_mae" type="date" onchange='preencher()'> 
+                <input class="input_type2" id="nascimento_mae" type="date" onchange='preencher("nascimento_mae","Dmp")'> 
 
                 <label for="cep_mae">cep</label>
-                <input class="input_type2" id="cep_mae" type="number" onchange='preencher()'>
+                <input class="input_type2" id="cep_mae" type="number" minlength="8" maxlength="8" onchange='preencher("cep_mae","Cmp"),pesquisarCep("cep_mae","endereco_mae")'>
 
                 <label for="endereco_mae">Endereço</label>
-                <input class="input_type1 input_linha" id="nome_mae" type="text" onchange='preencher()'>
+                <input class="input_type1 input_linha" id="endereco_mae" type="text" onchange='preencher("endereco_mae","Emp")'>
 
                 <label for="numero_mae">Número</label>
-                <input class="input_type3" id="numero_mae" type="number" onchange='preencher()'>
+                <input class="input_type3" id="numero_mae" type="number" onchange='preencher("numero_mae","Nmp")'>
 
                 <label for="complemento_mae">Complemento</label>
-                <input class="input_type1" id="complemento_mae" type="text" onchange='preencher()'>
+                <input class="input_type1" id="complemento_mae" type="text" onchange='preencher("complemento_mae","Cmp")'>
             </form>
         </div>
     </section>
